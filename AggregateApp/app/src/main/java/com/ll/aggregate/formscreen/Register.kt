@@ -15,6 +15,7 @@
  */
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,6 +24,8 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.ll.aggregate.R
+import com.ll.aggregate.ScanActivity
+import com.ll.aggregate.WebViewActivity
 
 
 /**
@@ -36,7 +39,10 @@ class Register : Fragment() {
         val view = inflater.inflate(R.layout.fragment_register, container, false)
 
         view.findViewById<Button>(R.id.signup_btn).setOnClickListener {
-            findNavController().navigate(R.id.action_register_to_registered)
+//            findNavController().navigate(R.id.action_register_to_registered)
+
+            var intent = Intent(context, ScanActivity::class.java)
+            startActivity(intent)
         }
         return view
     }
